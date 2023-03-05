@@ -1,0 +1,29 @@
+#include <stdio.h>
+#define MAX_DIGITS 99999999999999
+int main() {
+    int n, count = 0, i, j, is_prime;
+
+    printf("Digite a quantidade de números primos que deseja imprimir: ");
+    scanf("%d", &n);
+
+    i = 2;
+    while (count < n) {
+        is_prime = 1;
+
+        for (j = 2; j < i; j++) {
+            if (i % j == 0) {
+                is_prime = 0;
+                break;
+            }
+        }
+
+        if (is_prime) {
+            printf("%d ", i);
+            count++;
+        }
+
+        i++;
+    }
+
+    return 0;
+}
